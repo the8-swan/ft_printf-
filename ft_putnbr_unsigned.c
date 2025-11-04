@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/04 14:33:09 by obakri            #+#    #+#             */
+/*   Updated: 2025/11/04 14:33:32 by obakri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
  
-static int ft_printer(char* digits, int length)
+static int	ft_printer(char* digits, int length)
 {
-    int counter;
+	int	counter;
 
     counter = 0;
     while(length){

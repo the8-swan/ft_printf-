@@ -1,26 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/04 14:29:48 by obakri            #+#    #+#             */
+/*   Updated: 2025/11/04 14:32:58 by obakri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int ft_printer(char* digits, int nb, int length)
+static int	ft_printer(char *digits, int nb, int length)
 {
-    int counter;
+	int	counter;
 
-    counter = 0;
-    if(nb < 0)
-    {
-        counter += write(1,"-",1);
-    }
-    while(length){
-        counter += write(1,&digits[--length],1);
-    }
-    return (counter);
+	counter = 0;
+	if (nb < 0)
+		counter += write(1, "-", 1);
+	while (length)
+		counter += write(1, &digits[--length], 1);
+	return (counter);
 }
 
-
-
-int ft_putnbr(int nb)
+int	ft_putnbr(int nb)
 {
-    int		i;
+	int		i;
 	char	digits[10];
 	long	number;
 
@@ -35,5 +41,5 @@ int ft_putnbr(int nb)
 		if (number == 0)
 			break ;
 	}
-	return (ft_printer(digits,nb,i));
+	return (ft_printer(digits, nb, i));
 }

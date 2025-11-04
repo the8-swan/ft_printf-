@@ -18,6 +18,8 @@ int ft_conversions(char fs, va_list list)
         counter = ft_puthex(va_arg(list,int),fs);
     }else if(fs == 'p'){
         counter = ft_putaddress(va_arg(list,unsigned long));
+    }else if(fs == '%'){
+        counter = ft_putchar('%');
     }
     return (counter);
 }
@@ -49,8 +51,8 @@ int ft_printf(const char *s, ...)
 
 int main(){
     int a =9;
-    printf("%d \n",ft_printf("%s %d %u %X %x %p oumaima \n","hello",123,-123,-999,-999,&a));
-    printf("%d \n",printf("%s %d %u %X %x %p oumaima \n","hello",123,-123,-999,-999,&a));
+    printf("%d \n",ft_printf("%s %d %u %X %x %p %% oumaima \n","hello",123,-123,-999,-999,&a));
+    printf("%d \n",printf("%s %d %u %X %x %p %% oumaima \n","hello",123,-123,-999,-999,&a));
 
 
     return 0;

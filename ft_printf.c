@@ -53,13 +53,18 @@ int	ft_printf(const char *s, ...)
 		else
 		{
 			counter += ft_putchar(s[i]);
-			i++;
 		}
+		i++;
 	}
 	return (counter);
 }
-//int main(){
-//          ft_printf("%%%% %h\n");
-//          printf("%%%%h\n");
-//           return 0;
-//   }
+/*
+int main(){
+         // ft_printf("%%%% %h\n");
+          //printf("%%%%h\n");
+		  char *ptr= NULL;
+		  ft_printf("%s\n",ptr);
+			//printf("%s",ptr);
+           return 0;
+}
+*/

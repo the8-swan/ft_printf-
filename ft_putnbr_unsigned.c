@@ -6,26 +6,25 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:33:09 by obakri            #+#    #+#             */
-/*   Updated: 2025/11/04 14:33:32 by obakri           ###   ########.fr       */
+/*   Updated: 2025/11/04 17:32:51 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
- 
-static int	ft_printer(char* digits, int length)
+
+static int	ft_printer(char	*digits, int length)
 {
 	int	counter;
 
-    counter = 0;
-    while(length){
-        counter += write(1,&digits[--length],1);
-    }
-    return (counter);
+	counter = 0;
+	while (length)
+		counter += write(1, &digits[--length], 1);
+	return (counter);
 }
 
-int ft_putnbr_unsigned(unsigned int nb)
+int	ft_putnbr_unsigned(unsigned int nb)
 {
-    int		i;
+	int		i;
 	char	digits[10];
 	long	n;
 
@@ -38,5 +37,5 @@ int ft_putnbr_unsigned(unsigned int nb)
 		if (n == 0)
 			break ;
 	}
-	return (ft_printer(digits,i));
+	return (ft_printer(digits, i));
 }

@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 char *ft_hex(char fs)
 {
@@ -14,15 +14,16 @@ int ft_puthex(unsigned int nb, char fs)
     char    digits[10];
     int i;
     int counter;
+    long    n;
 
     i = 0;
     ptr = ft_hex(fs);
-    //printf("%s",ptr);
-    while (nb + 1 >= 1)
+    n = nb;
+    while (n + 1 >= 1)
 	{
-		digits[i++] = ptr[(nb % 16)] ;
-		nb /= 16;
-		if (nb == 0)
+		digits[i++] = ptr[(n % 16)] ;
+		n /= 16;
+		if (n == 0)
 			break ;
 	}
     counter = i;

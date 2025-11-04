@@ -6,10 +6,17 @@ SRC = ft_putchar.c ft_putstr.c ft_printf.c ft_putnbr.c ft_putnbr_unsigned.c ft_p
 
 SRC_OBJ = $(SRC:.c=.o)
 
+all : $(NAME)
 
-main:$(SRC_OBJ)
-	$(CC) $(CFLAGS) $(SRC_OBJ) -o $@
+$(NAME) : $(SRC_OBJ)
+	ar rcs $(NAME) $(SRC_OBJ)
 
-
-clean:$(SRC_OBJ)
+clean : $(SRC_OBJ)
 	rm -f $(SRC_OBJ)
+
+fclean : clean
+	rm -f $(NAME)
+
+re : fclean all
+
+.PHONY : all clean fclean re

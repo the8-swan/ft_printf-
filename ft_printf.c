@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 
 int ft_conversions(char fs, va_list list)
@@ -15,7 +15,7 @@ int ft_conversions(char fs, va_list list)
     }else if(fs == 'u'){
         counter = ft_putnbr_unsigned(va_arg(list,unsigned int));
     }else if(fs == 'x' || fs == 'X'){
-        counter = ft_puthex(va_arg(list,int),fs);
+        counter = ft_puthex(va_arg(list,unsigned int),fs);
     }else if(fs == 'p'){
         counter = ft_putaddress(va_arg(list,unsigned long));
     }else if(fs == '%'){
@@ -49,11 +49,8 @@ int ft_printf(const char *s, ...)
     return counter;
 }
 
-int main(){
-    int a =9;
-    printf("%d \n",ft_printf("%s %d %u %X %x %p %% oumaima \n","hello",123,-123,-999,-999,&a));
-    printf("%d \n",printf("%s %d %u %X %x %p %% oumaima \n","hello",123,-123,-999,-999,&a));
-
-
-    return 0;
-}
+ //int main(){
+ //    printf("%d\n",ft_printf("%p",NULL));
+ //    printf("%d\n",printf("%p", NULL));
+ //    return 0;
+ //}

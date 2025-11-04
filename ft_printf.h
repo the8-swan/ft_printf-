@@ -4,14 +4,14 @@
 #include <stdarg.h>
 
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 int ft_printf(const char *s, ...);
 int ft_putstr(char *s);
 int ft_putnbr(int nb);
 int ft_putchar(char c);
-int ft_putnbr_unsigned(unsigned int nb);
+int ft_putnbr_unsigned(unsigned int n);
 int ft_puthex(unsigned int nb, char fs);
 int ft_putaddress(unsigned long nb);
 

@@ -31,6 +31,8 @@ int	ft_conversions(char fs, va_list list)
 		counter = ft_putaddress(va_arg(list, unsigned long));
 	else if (fs == '%')
 		counter = ft_putchar('%');
+	else
+		counter = ft_putchar(fs);
 	return (counter);
 }
 
@@ -43,28 +45,21 @@ int	ft_printf(const char *s, ...)
 	i = 0;
 	counter = 0;
 	va_start(args, s);
+	if (!s)
+		return (-1);
 	while (s[i])
 	{
 		if (s[i] == '%')
 		{
 			i++;
+			if (s[i] == '\0')
+				return (-1);
 			counter += ft_conversions(s[i], args);
 		}
 		else
-		{
 			counter += ft_putchar(s[i]);
-		}
 		i++;
 	}
+	va_end(args);
 	return (counter);
 }
-/*
-int main(){
-         // ft_printf("%%%% %h\n");
-          //printf("%%%%h\n");
-		  char *ptr= NULL;
-		  ft_printf("%s\n",ptr);
-			//printf("%s",ptr);
-           return 0;
-}
-*/
